@@ -2,11 +2,6 @@
 from abc import ABC, abstractmethod
 
 class BaseClassifier(ABC):
-    """
-    Tüm sınıflandırıcıların türetilmesi gereken temel soyut sınıf.
-    Bu yapı, kodun geri kalanının modelin iç yapısını bilmeden
-    çalışabilmesini (Polimorfizm) sağlar.
-    """
     
     @abstractmethod
     def train(self, X_train, y_train):
