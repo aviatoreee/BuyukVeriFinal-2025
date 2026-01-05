@@ -4,10 +4,8 @@ from .base_classifier import BaseClassifier
 
 class TwoingClassifier(BaseClassifier):
     def __init__(self):
-        # Scikit-learn'de doğrudan 'Twoing' kriteri yoktur.
-        # Bunu simüle etmek için Gini kullanıp, en iyi bölünmeyi aramak yerine
-        # rastgele bölünmeler (Random Splitter) deneyen bir yapı kuruyoruz.
-        # Bu, farklı bir ağaç topolojisi oluşturur.
+        # Scikit-learn'de doğrudan 'Twoing' için kriter bulunamamıştır.
+
         self.model = DecisionTreeClassifier(criterion='gini', splitter='random', random_state=42)
 
     def train(self, X_train, y_train):
