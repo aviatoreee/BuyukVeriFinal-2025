@@ -12,9 +12,7 @@ class Node:
         self.value = value          # Eğer yaprak ise, sınıf değeri (0 veya 1)
 
 class CustomTwoingTree:
-    """
-    Twoing Kriterini kullanan Saf Python Karar Ağacı İmplementasyonu.
-    """
+
     def __init__(self, max_depth=10, min_samples_split=2):
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
