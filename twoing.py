@@ -108,7 +108,7 @@ class CustomTwoingTree:
         probs_right = counts_right / n_right
         
         # Formülün uygulanması
-        # Sum of absolute differences
+
         diff_sum = np.sum(np.abs(probs_left - probs_right))
         
         twoing_value = (p_L * p_R / 4) * (diff_sum ** 2)
@@ -136,11 +136,11 @@ class CustomTwoingTree:
 class TwoingClassifier(BaseClassifier):
     def __init__(self):
         # Scikit-learn değil, kendi yazdığımız ağacı kullanıyoruz.
-        # max_depth=10: Sonsuz döngüye girmesin ve hızlı çalışsın diye sınır koyduk.
+        # max_depth=10: Sonsuz döngüye koruması ve hızlı çalışsın diye sınır koyduk.
         self.model = CustomTwoingTree(max_depth=10, min_samples_split=5)
 
     def train(self, X_train, y_train):
-        # Y verisinin integer olduğundan emin olalım (bincount için)
+        # Y verisinin integer olduğundan emin olmak için
         y_train = y_train.astype(int)
         self.model.fit(X_train, y_train)
 
